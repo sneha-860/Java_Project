@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="265463da-563f-4209-9fc5-8e00a7cd7c30" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Java_Project/EcommerceApp/src/main/webapp/WEB-INF/lib/jakarta.servlet.jsp.jstl-api-3.0.0-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Java_Project/EcommerceApp/src/main/webapp/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Java_Project/EcommerceApp/src/main/webapp/jsp/cart.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Java_Project/EcommerceApp/src/main/webapp/jsp/header.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Java_Project/EcommerceApp/src/main/webapp/jsp/login.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Java_Project/EcommerceApp/src/main/webapp/jsp/order.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Java_Project/EcommerceApp/src/main/webapp/jsp/products.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Java_Project/EcommerceApp/src/main/webapp/jsp/register.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java_Project" beforeDir="false" afterPath="$PROJECT_DIR$/Java_Project" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/Java_Project" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 0
+}]]></component>
+  <component name="ProjectId" id="3CljFKqlr98y6Eas9c3xKy01cOU" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JAR Application.jakarta.servlet.jsp.jstl-api-3.0.0-javadoc.jar.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Smart Tomcat.Tomcat: Javamini.executor": "Run",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/SIDDHARTH RAWAT/IdeaProjects/Javamini/Java_Project/EcommerceApp/src/main/webapp/WEB-INF/lib",
+    "onboarding.tips.debug.path": "C:/Users/SIDDHARTH RAWAT/IdeaProjects/Javamini/src/Main.java",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\SIDDHARTH RAWAT\IdeaProjects\Javamini\Java_Project\EcommerceApp\src\main\webapp\WEB-INF\lib" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="jakarta.servlet.jsp.jstl-api-3.0.0-javadoc.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/Java_Project/EcommerceApp/src/main/webapp/WEB-INF/lib/jakarta.servlet.jsp.jstl-api-3.0.0-javadoc.jar" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Tomcat: Javamini" type="com.poratu.idea.plugins.tomcat">
+      <predefined_log_file enabled="true" id="Tomcat Localhost Log" />
+      <predefined_log_file enabled="true" id="Tomcat Access Log" />
+      <predefined_log_file id="Tomcat Catalina Log" />
+      <predefined_log_file id="Tomcat Manager Log" />
+      <predefined_log_file id="Tomcat Host Manager Log" />
+      <option name="catalinaBase" value="" />
+      <option name="contextPath" value="/Javamini" />
+      <option name="docBase" value="$PROJECT_DIR$/Java_Project/EcommerceApp/src/main/webapp" />
+      <option name="envOptions">
+        <map />
+      </option>
+      <option name="extraClassPath" value="" />
+      <option name="tomcatInfo">
+        <TomcatInfo>
+          <option name="name" value="Apache Tomcat/10.1.54" />
+          <option name="path" value="$USER_HOME$/Downloads/apache-tomcat-10.1.54-windows-x64/apache-tomcat-10.1.54" />
+          <option name="version" value="10.1.54.0" />
+        </TomcatInfo>
+      </option>
+      <option name="vmOptions" value="" />
+      <module name="Javamini" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JAR Application.jakarta.servlet.jsp.jstl-api-3.0.0-javadoc.jar" />
+      <item itemvalue="Smart Tomcat.Tomcat: Javamini" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JAR Application.jakarta.servlet.jsp.jstl-api-3.0.0-javadoc.jar" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="265463da-563f-4209-9fc5-8e00a7cd7c30" name="Changes" comment="" />
+      <created>1776966948024</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1776966948024</updated>
+    </task>
+    <servers />
+  </component>
+</project>
