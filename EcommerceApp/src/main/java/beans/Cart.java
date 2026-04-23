@@ -1,10 +1,10 @@
 package beans;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "cart")
-public class CartBean {
+public class Cart {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,7 +15,7 @@ public class CartBean {
     private double price;
     private int quantity;
 
-    public CartBean() {}
+    public Cart() {}
 
     public int getId() { return id; }
     public void setId(int id) { this.id = id; }

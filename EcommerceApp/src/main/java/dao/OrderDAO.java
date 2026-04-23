@@ -1,12 +1,12 @@
 package dao;
 
-import beans.OrderBean;
+import beans.Order;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 public class OrderDAO {
 
-    public void placeOrder(OrderBean order) {
+    public void placeOrder(Order order) {
         Transaction tx = null;
 
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {

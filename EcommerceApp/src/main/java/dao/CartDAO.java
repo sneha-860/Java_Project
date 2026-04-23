@@ -1,12 +1,12 @@
 package dao;
 
-import beans.CartBean;
+import beans.Cart;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 public class CartDAO {
 
-    public void addToCart(CartBean cart) {
+    public void addToCart(Cart cart) {
         Transaction tx = null;
 
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {

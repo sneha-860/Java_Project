@@ -1,10 +1,10 @@
 package beans;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "orders")
-public class OrderBean {
+public class Order {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,7 +13,7 @@ public class OrderBean {
     private int userId;
     private double totalAmount;
 
-    public OrderBean() {}
+    public Order() {}
 
     public int getOrderId() { return orderId; }
     public void setOrderId(int orderId) { this.orderId = orderId; }

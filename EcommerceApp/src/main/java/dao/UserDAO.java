@@ -1,12 +1,12 @@
 package dao;
 
-import beans.UserBean;
+import beans.User;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 public class UserDAO {
 
-    public void saveUser(UserBean user) {
+    public void saveUser(User user) {
         Transaction tx = null;
 
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
@@ -15,15 +15,12 @@ public class UserDAO {
             session.save(user);
 
             tx.commit();
+
+            System.out.println("User inserted successfully!");
+
         } catch (Exception e) {
             if (tx != null) tx.rollback();
             e.printStackTrace();
-        }
-    }
-
-    public UserBean getUser(int id) {
-        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-            return session.get(UserBean.class, id);
         }
     }
 }
