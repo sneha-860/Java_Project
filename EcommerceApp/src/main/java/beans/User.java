@@ -1,10 +1,10 @@
 package beans;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "users")
-public class UserBean {
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,7 +14,7 @@ public class UserBean {
     private String email;
     private String password;
 
-    public UserBean() {} // Required
+    public User() {} // Required
 
     // Getters & Setters
     public int getId() { return id; }
