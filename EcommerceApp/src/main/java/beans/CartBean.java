@@ -1,45 +1,38 @@
 package beans;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "cart")
 public class CartBean {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+
     private int productId;
     private String productName;
     private double price;
     private int quantity;
 
-    // Getters and Setters
-    public int getProductId() {
-        return productId;
-    }
+    public CartBean() {}
 
-    public void setProductId(int productId) {
-        this.productId = productId;
-    }
+    public int getId() { return id; }
+    public void setId(int id) { this.id = id; }
 
-    public String getProductName() {
-        return productName;
-    }
+    public int getProductId() { return productId; }
+    public void setProductId(int productId) { this.productId = productId; }
 
-    public void setProductName(String productName) {
-        this.productName = productName;
-    }
+    public String getProductName() { return productName; }
+    public void setProductName(String productName) { this.productName = productName; }
 
-    public double getPrice() {
-        return price;
-    }
+    public double getPrice() { return price; }
+    public void setPrice(double price) { this.price = price; }
 
-    public void setPrice(double price) {
-        this.price = price;
-    }
+    public int getQuantity() { return quantity; }
+    public void setQuantity(int quantity) { this.quantity = quantity; }
 
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
-
-    // Business Logic
+    // Logic
     public double getTotal() {
         return price * quantity;
     }

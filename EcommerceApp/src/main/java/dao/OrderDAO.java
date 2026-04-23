@@ -1,31 +1,22 @@
 package dao;
 
 import beans.OrderBean;
-import java.sql.*;
-import java.util.*;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 public class OrderDAO {
 
-    public boolean placeOrder(OrderBean order) {
-        boolean status = false;
+    public void placeOrder(OrderBean order) {
+        Transaction tx = null;
 
-        try {
-            Connection conn = DBConnection.getConnection();
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            tx = session.beginTransaction();
 
-            String query = "INSERT INTO Orders(UserID, Date, Status) VALUES (?, ?, ?)";
-            PreparedStatement ps = conn.prepareStatement(query);
+            session.save(order);
 
-            ps.setInt(1, order.getUserID());
-            ps.setTimestamp(2, new Timestamp(System.currentTimeMillis()));
-            ps.setString(3, "Placed");
-
-            int rows = ps.executeUpdate();
-            if (rows > 0) status = true;
-
+            tx.commit();
         } catch (Exception e) {
-            e.printStackTrace();
+            if (tx != null) tx.rollback();
         }
-
-        return status;
     }
 }

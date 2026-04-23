@@ -1,58 +1,29 @@
 package dao;
 
 import beans.UserBean;
-import java.sql.*;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 public class UserDAO {
 
-    public boolean registerUser(UserBean user) {
-        boolean status = false;
+    public void saveUser(UserBean user) {
+        Transaction tx = null;
 
-        try {
-            Connection conn = DBConnection.getConnection();
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            tx = session.beginTransaction();
 
-            String query = "INSERT INTO Users(Name, Email, Password) VALUES (?, ?, ?)";
-            PreparedStatement ps = conn.prepareStatement(query);
+            session.save(user);
 
-            ps.setString(1, user.getName());
-            ps.setString(2, user.getEmail());
-            ps.setString(3, user.getPassword());
-
-            int rows = ps.executeUpdate();
-            if (rows > 0) status = true;
-
+            tx.commit();
         } catch (Exception e) {
+            if (tx != null) tx.rollback();
             e.printStackTrace();
         }
-
-        return status;
     }
 
-    public UserBean loginUser(String email, String password) {
-        UserBean user = null;
-
-        try {
-            Connection conn = DBConnection.getConnection();
-
-            String query = "SELECT * FROM Users WHERE Email=? AND Password=?";
-            PreparedStatement ps = conn.prepareStatement(query);
-
-            ps.setString(1, email);
-            ps.setString(2, password);
-
-            ResultSet rs = ps.executeQuery();
-
-            if (rs.next()) {
-                user = new UserBean();
-                user.setUserID(rs.getInt("UserID"));
-                user.setName(rs.getString("Name"));
-                user.setEmail(rs.getString("Email"));
-            }
-
-        } catch (Exception e) {
-            e.printStackTrace();
+    public UserBean getUser(int id) {
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            return session.get(UserBean.class, id);
         }
-
-        return user;
     }
 }

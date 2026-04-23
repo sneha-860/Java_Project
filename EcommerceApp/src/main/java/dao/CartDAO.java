@@ -1,29 +1,22 @@
 package dao;
 
-import java.sql.*;
+import beans.CartBean;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 public class CartDAO {
 
-    public boolean addToCart(int userId, int productId, int quantity) {
-        boolean status = false;
+    public void addToCart(CartBean cart) {
+        Transaction tx = null;
 
-        try {
-            Connection conn = DBConnection.getConnection();
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            tx = session.beginTransaction();
 
-            String query = "INSERT INTO Cart(UserID, ProductID, Quantity) VALUES (?, ?, ?)";
-            PreparedStatement ps = conn.prepareStatement(query);
+            session.save(cart);
 
-            ps.setInt(1, userId);
-            ps.setInt(2, productId);
-            ps.setInt(3, quantity);
-
-            int rows = ps.executeUpdate();
-            if (rows > 0) status = true;
-
+            tx.commit();
         } catch (Exception e) {
-            e.printStackTrace();
+            if (tx != null) tx.rollback();
         }
-
-        return status;
     }
 }

@@ -1,35 +1,30 @@
 package dao;
 
 import beans.ProductBean;
-import java.sql.*;
-import java.util.*;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+import java.util.List;
 
 public class ProductDAO {
 
-    public List<ProductBean> getAllProducts() {
-        List<ProductBean> list = new ArrayList<>();
+    public void saveProduct(ProductBean product) {
+        Transaction tx = null;
 
-        try {
-            Connection conn = DBConnection.getConnection();
-            String query = "SELECT * FROM Products";
-            PreparedStatement ps = conn.prepareStatement(query);
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            tx = session.beginTransaction();
 
-            ResultSet rs = ps.executeQuery();
+            session.save(product);
 
-            while (rs.next()) {
-                ProductBean p = new ProductBean();
-                p.setProductID(rs.getInt("ProductID"));
-                p.setName(rs.getString("Name"));
-                p.setPrice(rs.getDouble("Price"));
-                p.setStock(rs.getInt("Stock"));
-
-                list.add(p);
-            }
-
+            tx.commit();
         } catch (Exception e) {
-            e.printStackTrace();
+            if (tx != null) tx.rollback();
         }
+    }
 
-        return list;
+    public List<ProductBean> getAllProducts() {
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            return session.createQuery("from ProductBean", ProductBean.class).list();
+        }
     }
 }
